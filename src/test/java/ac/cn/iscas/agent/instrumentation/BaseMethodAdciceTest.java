@@ -15,8 +15,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import ac.cn.iscas.agent.config.AgentConfiguration;
+import ac.cn.iscas.agent.filter.ClassInterceptorFilter;
 import ac.cn.iscas.agent.filter.InterceptorFilter;
-import ac.cn.iscas.agent.filter.MethodInterceptorFilter;
+import ac.cn.iscas.agent.filter.RootMethodFilter;
 import net.bytebuddy.jar.asm.ClassReader;
 import net.bytebuddy.jar.asm.ClassWriter;
 
@@ -27,9 +28,9 @@ public class BaseMethodAdciceTest {
   @Autowired
   private ApplicationContext context;
   @Autowired
-  private InterceptorFilter<String> classFilter;
+  private ClassInterceptorFilter classFilter;
   @Autowired
-  private InterceptorFilter<MethodInterceptorFilter.Method> methodFilter;
+  private RootMethodFilter methodFilter;
   
   
   @Test
